@@ -11,3 +11,17 @@ async function generate(){
 }
 
 generate();
+
+
+function createOptions(list){
+	document.querySelector('.breeds').innerHTML= `
+	<select onchange="loadBreed(this.value)">
+        <option >Choose a dog breed</option>
+        ${Object.keys(list).map(function(breed){
+        	return `<option>${breed}</option>`
+        })}
+    </select>
+	`
+}
+
+
