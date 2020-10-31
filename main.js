@@ -1,5 +1,12 @@
-//fetch("https://dog.ceo/api/breeds/list/all")
+/* oldschool working of promises
+fetch("https://dog.ceo/api/breeds/list/all").then(function(response){
+	return response.json() //retuns promise
+}).then(function(data){
+	console.log(data)
+})*/
 
+//modern js with promises
+//fetch data function...
 async function generate(){
 	const response = await fetch("https://dog.ceo/api/breeds/list/all")
 	//no code is run until fetch is done
@@ -9,9 +16,7 @@ async function generate(){
 	createOptions(data.message)
 	
 }
-
 generate();
-
 
 function createOptions(list){
 	document.querySelector('.breeds').innerHTML= `
@@ -24,4 +29,20 @@ function createOptions(list){
 	`
 }
 
+async function loadBreed(breed){
+	
+	if(breed != "Choose a dog breed"){
+		//we fetch again making this function async funct
+		const response =await fetch(`https://dog.ceo/api/breed/${breed}/images`);
+		const data = await response.json();
+		createSlide(data.message)
+	}
+}
+
+function createSlide(images){
+	document.querySelector('#slideshow').innerHTML =`
+		<div id="slideshow" style="background-image: url('${images[0]}')">
+        </div>
+	`
+}
 
