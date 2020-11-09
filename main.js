@@ -8,7 +8,7 @@ async function generate(){
 }
 generate();
 
-/*function createOptions(list){
+function createOptions(list){
 	document.querySelector('.breeds').innerHTML= `
 	<select onchange="loadBreed(this.value)">
         <option >Choose a dog breed</option>
@@ -34,5 +34,5 @@ function createSlide(images){
 		<div id="slideshow" style="background-image: url('${images[0]}')">
         </div>
 	`
-}*/
+}
 
