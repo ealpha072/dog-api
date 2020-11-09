@@ -1,10 +1,7 @@
 //modern js with promises
 //fetch data function...
 async function generate(){
-	const response = await fetch("https://dog.ceo/api/breeds/list/all")
-	//no code is run until fetch is done
-	//fetch resolves a promise ..
-	//we then take the response and parse into readable format..
+	const response = await fetch("https://dog.ceo/api/breeds/list/all");
 	const data = await response.json();
 	createOptions(data.message)
 	
