@@ -1,10 +1,3 @@
-/* oldschool working of promises
-fetch("https://dog.ceo/api/breeds/list/all").then(function(response){
-	return response.json() //retuns promise
-}).then(function(data){
-	console.log(data)
-})*/
-
 //modern js with promises
 //fetch data function...
 async function generate(){
@@ -18,7 +11,7 @@ async function generate(){
 }
 generate();
 
-function createOptions(list){
+/*function createOptions(list){
 	document.querySelector('.breeds').innerHTML= `
 	<select onchange="loadBreed(this.value)">
         <option >Choose a dog breed</option>
@@ -44,5 +37,5 @@ function createSlide(images){
 		<div id="slideshow" style="background-image: url('${images[0]}')">
         </div>
 	`
-}
+}*/
 
